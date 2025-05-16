@@ -1,0 +1,30 @@
+Request ID: b30e1c2e-92c9-4338-8b2a-4ea1231722a0
+Analysis Type: MAX_PROFIT
+Input: [-2.0, 3.0, -1.0, 4.0, -5.0]
+Result: StartIndex: 1, EndIndex: 3, Total: 6.0
+-----
+Request ID: 6a1db1c2-5f49-484a-ad55-f2abe304b120
+Analysis Type: MAX_LOSS
+Input: [3.5, -4.2, 2.0, -3.0, -1.0]
+Result: StartIndex: 1, EndIndex: 4, Total: -6.2
+-----
+Request ID: c15a8767-3aaa-42e5-8ab6-feb9b74a846b
+Analysis Type: ZERO_RETURN
+Input: [2.0, -2.0, 1.0, -1.0, 3.0]
+Result: StartIndex: 0, EndIndex: 3, Total: 0.0
+-----
+Request ID: 64afbdd7-7b96-4720-8d89-b42c576feeec
+Analysis Type: MAX_PROFIT
+Input: [2.0, -1.0, 4.0, -1.0]
+Result: StartIndex: 0, EndIndex: 2, Total: 5.0
+-----
+Request ID: d1b4afe4-e899-454d-978a-d97ee11f5b1f
+Analysis Type: MAX_LOSS
+Input: [-2.0, 3.0, -6.0, -2.0]
+Result: StartIndex: 2, EndIndex: 3, Total: -8.0
+-----
+Request ID: 9a58cdc9-bd09-4cfb-b5f4-ae4d494f6aa4
+Analysis Type: ZERO_RETURN
+Input: [2.0, -2.0, 3.0, -2.0]
+Result: StartIndex: 0, EndIndex: 1, Total: 0.0
+-----
