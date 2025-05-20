@@ -1,4 +1,4 @@
-package algoClient.model.analysis;
+package algoClient.model.enums;
 
 /**
  * Represents the type of analysis the system can perform.

@@ -2,11 +2,11 @@ package algoClient.test;
 
 import AlgorithmModule.KadaneAnalyzer;
 import AlgorithmModule.SubarrayResult;
-import algoClient.model.analysis.AnalysisType;
-import algoClient.model.subarray.SubarrayRequest;
-import algoClient.repository.ISubarrayDao;
-import algoClient.repository.SubarrayFileDaoImpl;
-import algoClient.service.SubarrayService;
+import algoClient.model.enums.AnalysisType;
+import algoClient.model.request.TradingAnalysisRequest;
+import algoClient.repository.IAnalysisResultDao;
+import algoClient.repository.AnalysisResultDaoImpl;
+import algoClient.service.TradingAnalysisService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,14 +19,14 @@ import static org.junit.Assert.*;
 /**
  * Unit tests for SubarrayService using KadaneAnalyzer.
  */
-public class SubarrayServiceTest {
+public class TradingAnalysisServiceTest {
 
     private final String testFile = "test_datasource.txt";
-    private ISubarrayDao dao;
+    private IAnalysisResultDao dao;
 
     @Before
     public void setUp() {
-        dao = new SubarrayFileDaoImpl(testFile);
+        dao = new AnalysisResultDaoImpl(testFile);
         dao.clear();
     }
 
@@ -36,8 +36,8 @@ public class SubarrayServiceTest {
         new File(testFile).delete();
     }
 
-    private SubarrayRequest buildRequest(List<Double> values) {
-        return new SubarrayRequest(UUID.randomUUID().toString(), values, AnalysisType.MAX_PROFIT);
+    private TradingAnalysisRequest buildRequest(List<Double> values) {
+        return new TradingAnalysisRequest(UUID.randomUUID().toString(), values, AnalysisType.MAX_PROFIT);
     }
 
     /**
@@ -47,8 +47,8 @@ public class SubarrayServiceTest {
     @Test
     public void testAnalyzeMixedValues() {
         List<Double> values = Arrays.asList(-2.0, 3.0, -1.0, 4.0, -5.0);
-        SubarrayRequest request = buildRequest(values);
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisRequest request = buildRequest(values);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         SubarrayResult result = service.analyzeAndSave(request);
 
         assertEquals(6.0, result.getTotal(), 0.001);
@@ -63,8 +63,8 @@ public class SubarrayServiceTest {
     @Test
     public void testAnalyzeAllNegative() {
         List<Double> values = Arrays.asList(-4.0, -2.0, -7.0);
-        SubarrayRequest request = buildRequest(values);
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisRequest request = buildRequest(values);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         SubarrayResult result = service.analyzeAndSave(request);
 
         assertEquals(-2.0, result.getTotal(), 0.001);
@@ -78,8 +78,8 @@ public class SubarrayServiceTest {
     @Test
     public void testAnalyzeAllZeros() {
         List<Double> values = Arrays.asList(0.0, 0.0, 0.0);
-        SubarrayRequest request = buildRequest(values);
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisRequest request = buildRequest(values);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         SubarrayResult result = service.analyzeAndSave(request);
 
         assertEquals(0.0, result.getTotal(), 0.001);
@@ -93,8 +93,8 @@ public class SubarrayServiceTest {
     @Test
     public void testAnalyzeEmptyList() {
         List<Double> values = Collections.emptyList();
-        SubarrayRequest request = buildRequest(values);
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisRequest request = buildRequest(values);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         SubarrayResult result = service.analyzeAndSave(request);
 
         assertEquals(-1, result.getStartIndex());
@@ -107,7 +107,7 @@ public class SubarrayServiceTest {
      */
     @Test
     public void testGetAlgorithmName() {
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         assertEquals("Kadane", service.getAlgorithmName());
     }
 
@@ -116,7 +116,7 @@ public class SubarrayServiceTest {
      */
     @Test
     public void testClearAllResults() {
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         service.analyzeAndSave(buildRequest(Arrays.asList(1.0, 2.0, 3.0)));
         service.clearAllResults();
         assertTrue(dao.loadAll().isEmpty());
@@ -127,7 +127,7 @@ public class SubarrayServiceTest {
      */
     @Test
     public void testSavedContentExists() {
-        SubarrayService service = new SubarrayService(new KadaneAnalyzer(), dao);
+        TradingAnalysisService service = new TradingAnalysisService(new KadaneAnalyzer(), dao);
         service.analyzeAndSave(buildRequest(Arrays.asList(1.0, 2.0, -1.0)));
         List<String> content = dao.loadAll();
         assertFalse(content.isEmpty());

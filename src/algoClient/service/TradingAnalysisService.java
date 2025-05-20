@@ -2,23 +2,23 @@ package algoClient.service;
 
 import AlgorithmModule.ISubarrayAnalyzer;
 import AlgorithmModule.SubarrayResult;
-import algoClient.model.subarray.SubarrayRequest;
-import algoClient.repository.ISubarrayDao;
+import algoClient.model.request.TradingAnalysisRequest;
+import algoClient.repository.IAnalysisResultDao;
 
 /**
  * Core service class that uses a subarray analyzer strategy to process requests.
  */
-public class SubarrayService {
+public class TradingAnalysisService {
     private final ISubarrayAnalyzer analyzer;
-    private final ISubarrayDao dao;
+    private final IAnalysisResultDao dao;
 
-    public SubarrayService(ISubarrayAnalyzer analyzer, ISubarrayDao dao) {
+    public TradingAnalysisService(ISubarrayAnalyzer analyzer, IAnalysisResultDao dao) {
         this.analyzer = analyzer;
         this.dao = dao;
     }
 
     // Get the output from the SubarrayResult using strategy design pattern, and write it to the file.
-    public SubarrayResult analyzeAndSave(SubarrayRequest request) {
+    public SubarrayResult analyzeAndSave(TradingAnalysisRequest request) {
         SubarrayResult result = analyzer.analyze(request.getValues());
         dao.save(request, result);
         return result;
