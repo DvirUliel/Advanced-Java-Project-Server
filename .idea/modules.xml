@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProfitAnalazer.iml" filepath="$PROJECT_DIR$/ProfitAnalazer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlgorithmModule.iml" filepath="$PROJECT_DIR$/AlgorithmModule.iml" />
     </modules>
   </component>
 </project>

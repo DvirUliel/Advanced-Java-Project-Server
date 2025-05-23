@@ -7,13 +7,23 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/AlgorithmModule/out/artifacts/AlgorithmModule_jar/AlgorithmModule.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Java-Advanced-Algorithm-Model/out/artifacts/AlgorithmModule_jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/Java-Advanced-Algorithm-Model/out/artifacts/AlgorithmModule_jar" recursive="false" />
       </library>
     </orderEntry>
   </component>

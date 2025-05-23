@@ -18,26 +18,26 @@ public class TradingAnalysisRequest {
     /**
      * Constructs a new SubarrayRequest with a specific data mode.
      *
-     * @param requestId       unique identifier for this request
-     * @param values          list of numeric values (e.g., daily changes)
-     * @param type            analysis type (e.g., MAX_PROFIT)
-     * @param dataMode        mode indicating DAILY_CHANGES or CLOSING_PRICES
-     * @param closingPrices   list of closing prices; may be null if mode is DAILY_CHANGES
+     * @param requestId - unique identifier for this request
+     * @param values - list of numeric values (e.g., daily changes)
+     * @param type - analysis type (e.g., MAX_PROFIT)
+     * @param dataMode - mode indicating DAILY_CHANGES or CLOSING_PRICES
+     * @param closingPrices - list of closing prices; may be null if mode is DAILY_CHANGES
      */
     public TradingAnalysisRequest(String requestId, List<Double> values, AnalysisType type, DataMode dataMode, List<Double> closingPrices) {
-        this.requestId     = requestId;
-        this.values        = values;
-        this.type          = type;
-        this.dataMode      = dataMode;
+        this.requestId = requestId;
+        this.values = values;
+        this.type = type;
+        this.dataMode = dataMode;
         this.closingPrices = closingPrices;
     }
 
     /**
      * Convenience constructor for DAILY_CHANGES mode without closing prices.
      *
-     * @param requestId unique identifier for this request
-     * @param values    list of numeric values (daily changes)
-     * @param type      analysis type
+     * @param requestId - unique identifier for this request
+     * @param values - list of numeric values (daily changes)
+     * @param type - analysis type
      */
     public TradingAnalysisRequest(String requestId, List<Double> values, AnalysisType type) {
         this(requestId, values, type, DataMode.DAILY_CHANGES, null);
