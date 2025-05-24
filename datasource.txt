@@ -27,3 +27,9 @@ Data Mode: DAILY_CHANGES
 Values Used for Analysis: [64.0, 2.0, 2.0, 2.0, -90.0]
 Result: StartIndex: 0, EndIndex: 3, Total: 70.0
 ----------------------------------------------------
+Request ID: 4671b296-08d9-454f-b3ba-098be6164ee4
+Analysis Type: MAX_LOSS
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [30.0, 30.0, -8.0]
+Result: StartIndex: 2, EndIndex: 2, Total: -8.0
+----------------------------------------------------

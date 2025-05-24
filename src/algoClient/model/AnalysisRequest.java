@@ -1,14 +1,14 @@
 // src/algoClient/model/subarray/SubarrayRequest.java
-package algoClient.model.request;
+package algoClient.model;
 
-import algoClient.model.enums.AnalysisType;
-import algoClient.model.enums.DataMode;
+import algoClient.enums.AnalysisType;
+import algoClient.enums.DataMode;
 import java.util.List;
 
 /**
  * Represents a request to analyze a numeric sequence, with an optional closing prices array.
  */
-public class TradingAnalysisRequest {
+public class AnalysisRequest {
     private final String requestId;
     private final List<Double> values;
     private final AnalysisType type;
@@ -24,7 +24,7 @@ public class TradingAnalysisRequest {
      * @param dataMode - mode indicating DAILY_CHANGES or CLOSING_PRICES
      * @param closingPrices - list of closing prices; may be null if mode is DAILY_CHANGES
      */
-    public TradingAnalysisRequest(String requestId, List<Double> values, AnalysisType type, DataMode dataMode, List<Double> closingPrices) {
+    public AnalysisRequest(String requestId, List<Double> values, AnalysisType type, DataMode dataMode, List<Double> closingPrices) {
         this.requestId = requestId;
         this.values = values;
         this.type = type;
@@ -39,7 +39,7 @@ public class TradingAnalysisRequest {
      * @param values - list of numeric values (daily changes)
      * @param type - analysis type
      */
-    public TradingAnalysisRequest(String requestId, List<Double> values, AnalysisType type) {
+    public AnalysisRequest(String requestId, List<Double> values, AnalysisType type) {
         this(requestId, values, type, DataMode.DAILY_CHANGES, null);
     }
 

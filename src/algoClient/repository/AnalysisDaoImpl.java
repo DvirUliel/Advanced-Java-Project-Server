@@ -1,7 +1,7 @@
 package algoClient.repository;
 
-import algoClient.model.enums.DataMode;
-import algoClient.model.request.TradingAnalysisRequest;
+import algoClient.enums.DataMode;
+import algoClient.model.AnalysisRequest;
 import AlgorithmModule.SubarrayResult;
 
 import java.io.*;
@@ -11,16 +11,16 @@ import java.util.List;
 /**
  * File-based implementation of ISubarrayDao using a text file.
  */
-public class AnalysisResultDaoImpl implements IAnalysisResultDao {
+public class AnalysisDaoImpl implements IAnalysisDao {
     private final String filePath;
 
-    public AnalysisResultDaoImpl(String filePath) {
+    public AnalysisDaoImpl(String filePath) {
         this.filePath = filePath;
     }
 
     // Write to the file all the information about the request.
     @Override
-    public void save(TradingAnalysisRequest request, SubarrayResult result) {
+    public void save(AnalysisRequest request, SubarrayResult result) {
         File file = new File(filePath);
         try (FileWriter writer = new FileWriter(file, true)) {
             // Write header title if file is new or empty

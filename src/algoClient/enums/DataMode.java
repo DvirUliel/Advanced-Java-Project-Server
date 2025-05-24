@@ -1,5 +1,5 @@
 // src/algoClient/model/analysis/DataMode.java
-package algoClient.model.enums;
+package algoClient.enums;
 
 /**
  * Specifies the mode of data provided for subarray analysis.
