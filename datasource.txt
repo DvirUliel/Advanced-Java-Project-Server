@@ -33,3 +33,36 @@ Data Mode: DAILY_CHANGES
 Values Used for Analysis: [30.0, 30.0, -8.0]
 Result: StartIndex: 2, EndIndex: 2, Total: -8.0
 ----------------------------------------------------
+Request ID: 5dc6ebb0-95bc-4ec9-8bb4-aa08ced8fa84
+Analysis Type: MAX_LOSS
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [60.0, 10.0, -5.0]
+Result: StartIndex: 2, EndIndex: 2, Total: -5.0
+----------------------------------------------------
+Request ID: 2f99ec12-ffa8-4b45-89b0-bd68648d2df5
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [60.0, 30.0, 10.0, 0.0]
+Result: StartIndex: 0, EndIndex: 2, Total: 100.0
+----------------------------------------------------
+Request ID: b4b5b3ea-ab23-467d-83be-ba77b5d36c1a
+Analysis Type: MAX_PROFIT
+Data Mode: CLOSING_PRICES
+User Input: [2.0]
+Values Used for Analysis: []
+Result: StartIndex: -1, EndIndex: -1, Total: 0.0
+----------------------------------------------------
+Request ID: 00572517-5da7-4c75-aceb-496c24505969
+Analysis Type: MAX_PROFIT
+Data Mode: CLOSING_PRICES
+User Input: [400.0, -2.0]
+Values Used for Analysis: [-402.0]
+Result: StartIndex: 0, EndIndex: 0, Total: -402.0
+----------------------------------------------------
+Request ID: a2d67a0d-4d99-491f-a723-cc8e1ea0e36b
+Analysis Type: ZERO_RETURN
+Data Mode: CLOSING_PRICES
+User Input: [1.0]
+Values Used for Analysis: []
+Result: StartIndex: -1, EndIndex: -1, Total: 0.0
+----------------------------------------------------
