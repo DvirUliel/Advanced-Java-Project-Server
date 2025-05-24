@@ -1,120 +1,134 @@
-# Java Advanced Project – Subarray Analysis System
+# Java Advanced Project - Stock Analyzer
 
-## 📦 Part A: Algorithm Library (`AlgorithmModule`)
+This project is the second part of a Java Advanced course and demonstrates a modular **Client-Server architecture** for analyzing stock data using different algorithms.
 
-This module provides a reusable Java library for analyzing numeric sequences (e.g., stock price changes) using the **Subarray Sum** family of algorithms.
+---
 
-### ✅ Features:
-
-* Interface `ISubarrayAnalyzer` defines the strategy for subarray analysis.
-* Abstract class `AbstractSubarrayAnalyzer` implements shared logic.
-* Two concrete algorithms:
-
-  * `KadaneAnalyzer`: finds subarray with **maximum sum** (profit).
-  * `PrefixSumAnalyzer`: finds the **longest subarray** with a given **target sum** (e.g., 0 for zero return).
-* Output model: `SubarrayResult` (start index, end index, total sum).
-
-### 🧪 Includes:
-
-* Unit tests (JUnit 4) verifying correctness of each algorithm under edge cases and realistic input.
-
-### 📁 Folder structure:
+## 📦 Project Structure
 
 ```
-src/
-├── AlgorithmModule/
-│   ├── AbstractSubarrayAnalyzer.java
-│   ├── ISubarrayAnalyzer.java
-│   ├── KadaneAnalyzer.java
-│   ├── PrefixSumAnalyzer.java
-│   └── SubarrayResult.java
-└── test/
-    └── ISubarrayAnalyzerTest.java
+Java-Advanced-Project-main/
+├── datasource.txt                 # Output file with saved results
+├── src/
+│   ├── Main.java                  # Optional entry point
+│   ├── algoClient/
+│   │   ├── enums/
+│   │   │   ├── AnalysisType.java         # Enum for analysis types
+│   │   │   └── DataMode.java             # Enum for input data mode
+│   │   ├── model/
+│   │   │   └── AnalysisRequest.java      # Object representing a request
+│   │   ├── repository/
+│   │   │   ├── IAnalysisDao.java         # Interface for data access
+│   │   │   └── AnalysisDaoImpl.java      # File-based DAO implementation
+│   │   ├── service/
+│   │   │   ├── AnalysisService.java      # Service layer for executing logic
+│   │   │   └── App.java                  # Main app logic with user interaction
+│   │   ├── test/
+│   │   │   └── AnalysisServiceTest.java  # Unit tests for service
+│   │   └── utils/
+│   │       ├── CalculateClosingPrices.java  # Computes daily changes from prices
+│   │       └── InputValidate.java           # Validates user input
+├── AlgorithmModule.iml            # IntelliJ config (if used)
+└── README.md                      # Project documentation
 ```
 
 ---
 
-## 💼 Part B: Client Application (`algoClient`)
+## 🧠 Strategy Design Pattern
 
-This module builds on the algorithm library to implement a command-line system that analyzes stock trading performance.
+This app uses the **Strategy Pattern** to allow dynamic selection of the algorithm used to analyze the stock data.
 
-### 🧠 Functionality:
+### Interface
 
-Given a list of stock prices or daily changes, the system allows:
+```java
+public interface ISubarrayAnalyzer {
+    SubarrayResult analyze(List<Double> values);
+    String getName();
+}
+```
 
-* 🟢 Max profit period (using Kadane’s algorithm)
-* 🔴 Max loss period (flipping sign and applying Kadane)
-* ⚖️ All zero-return periods (Prefix Sum with target = 0)
+### Implementations algorithms:
 
-### 🧩 Architecture:
+* **KadaneAnalyzer**: For finding max profit or max loss periods
+* **PrefixSumAnalyzer**: For identifying periods with zero total return
 
-* Strategy pattern: algorithm injected into the `SubarrayService`
-* DAO layer: saves analysis requests/results to `datasource.txt`
-* Models:
+These implementations are passed into `AnalysisService`, which uses the selected algorithm strategy based on user input.
 
-  * `AnalysisType` (enum)
-  * `SubarrayRequest`: wraps input, analysis type, and UUID
-  * `SubarrayResult`: output structure (from Part A)
+---
 
-### 🧪 Tests:
+## 🚀 How It Works
+- The user runs the application using `App.run()` (in `App.java`).
+- User is prompted to:
+  - Select analysis type (max profit, max loss, zero return)
+  - Choose between raw daily changes or closing prices
+  - Enter numeric data
+- The program validates input, performs analysis, and saves results to `datasource.txt`
 
-* Unit tests for `SubarrayService`
-* Validates real scenarios: profit, loss, and zero return with daily/closing input
+---
 
-### 🖥 Usage:
+## 📁 Data File
+Results are saved to:
+```
+datasource.txt
+```
+Each entry contains:
+- Request ID
+- Analysis type
+- Input data
+- (Optional) Closing prices
+- Result
+
+---
+
+## ✅ Input Handling
+Handled by `InputValidate` class:
+- Validates integers within a range
+- Parses comma-separated double values
+- Prevents invalid input from crashing the program
+
+Closing price deltas are computed using `CalculateClosingPrices` with a minimum input length check.
+
+---
+
+## 🧪 Testing
+- `AnalysisServiceTest` includes basic unit tests
+
+---
+
+## ▶️ Example Usage
+When you run the app, a sample session might look like:
 
 ```
 Choose action:
 [1] Run analysis
 [2] View saved results
 [3] Clear saved results
+➜ 1
 
-Enter stock data type: [1] Daily changes  [2] Closing prices
-Enter values: 100, 102, 101, 104
-Choose analysis type: [1] Max profit / [2] Max loss / [3] Zero return
-```
+Enter stock data type:
+[1] Daily changes
+[2] Closing prices
+➜ 1
 
-### 📁 Folder structure:
+Enter comma-separated numbers (e.g. 100.0, 102.5, 99.8):
+➜ 60,60,5,-4
 
-```
-src/
-└── algoClient/
-    ├── model/
-    │   ├── analysis/
-    │   │   ├── AnalysisRequest.java
-    │   │   └── AnalysisType.java
-    │   └── subarray/
-    │       └── SubarrayRequest.java
-    ├── repository/
-    │   ├── ISubarrayDao.java
-    │   └── SubarrayFileDaoImpl.java
-    ├── service/
-    │   └── SubarrayService.java
-    ├── test/
-    │   └── SubarrayServiceTest.java
-    └── Main.java
-```
+Choose analysis type:
+[1] Max profit
+[2] Max loss
+[3] Zero return
+➜ 1
 
-### 🗃 Output:
-
-All results saved to `datasource.txt`:
-
-```
-Request ID: ...
-Analysis Type: MAX_PROFIT
-Input: [...]
-Result: StartIndex: ..., EndIndex: ..., Total: ...
+✔ Analysis type: MAX_PROFIT
+✔ Using algorithm: Kadane
+✔ Result: StartIndex: 0, EndIndex: 2, Total: 125.0
+✔ Saved results in datasource.txt
 ```
 
 ---
 
-## ✅ Build & Run
+## 👥 Authors
 
-* Java 17+
-* JUnit 4
-* Run `Main.java` from Part B
-* Part A is compiled into `.jar` and imported by Part B
+* Dvir Uliel
+* Nicole Davidov
 
----
-
-© Developed by Dvir Uliel and Nicole Davidov as part of Java Advanced Course – Final Project

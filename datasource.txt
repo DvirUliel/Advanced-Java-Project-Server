@@ -66,3 +66,16 @@ User Input: [1.0]
 Values Used for Analysis: []
 Result: StartIndex: -1, EndIndex: -1, Total: 0.0
 ----------------------------------------------------
+Request ID: f97a1f4a-3e1a-451a-a6a9-0732d5d7317a
+Analysis Type: MAX_PROFIT
+Data Mode: CLOSING_PRICES
+User Input: [100.0, 102.0, 104.0, 60.0]
+Values Used for Analysis: [2.0, 2.0, -44.0]
+Result: StartIndex: 0, EndIndex: 1, Total: 4.0
+----------------------------------------------------
+Request ID: 5b86afeb-75b7-42de-92ac-d728083c6cae
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [60.0, 60.0, 5.0, -4.0]
+Result: StartIndex: 0, EndIndex: 2, Total: 125.0
+----------------------------------------------------
