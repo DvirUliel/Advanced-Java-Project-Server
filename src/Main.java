@@ -1,4 +1,4 @@
-import algoClient.service.App;
+import main.java.service.App;
 
 /**
  * Entry point for simulating subarray analysis based on stock data.
