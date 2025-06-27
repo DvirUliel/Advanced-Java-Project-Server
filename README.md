@@ -2,17 +2,6 @@
 
 A comprehensive client-server application for financial subarray analysis using advanced algorithms and enterprise design patterns.
 
-## 📋 Table of Contents
-
-- [Project Overview](#project-overview)
-- [Architecture](#architecture)
-- [Quick Start](#quick-start)
-- [API Usage](#api-usage)
-- [Testing](#testing)
-- [Design Patterns](#design-patterns)
-- [Performance](#performance--complexity)
-- [Project Requirements](#project-requirements-fulfilled)
-
 ## 🎯 Project Overview
 
 **TCP-based client-server application** that performs financial analysis using subarray algorithms:
