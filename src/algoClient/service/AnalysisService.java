@@ -36,4 +36,8 @@ public class AnalysisService {
         System.out.println(analyzer.getName());
         return analyzer.getName();
     }
+
+    public IAnalysisDao getDao() {
+        return dao;
+    }
 }
