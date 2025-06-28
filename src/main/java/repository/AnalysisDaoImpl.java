@@ -31,9 +31,9 @@ public class AnalysisDaoImpl implements IAnalysisDao {
 
             // Add header section only for new/empty files
             if (!file.exists() || file.length() == 0) {
-                writer.write("----------------------------------------------------" + System.lineSeparator());
+                writer.write("--------------------------------------------------------" + System.lineSeparator());
                 writer.write("Profit Analyzer - Calculates profit in stock trading" + System.lineSeparator());
-                writer.write("----------------------------------------------------" + System.lineSeparator());
+                writer.write("--------------------------------------------------------" + System.lineSeparator());
             }
 
             // Write request metadata
@@ -53,7 +53,7 @@ public class AnalysisDaoImpl implements IAnalysisDao {
             // Write processed values and analysis result
             writer.write("Values Used for Analysis: " + request.getValues() + System.lineSeparator());
             writer.write("Result: " + result + System.lineSeparator());
-            writer.write("----------------------------------------------------" + System.lineSeparator());
+            writer.write("--------------------------------------------------------" + System.lineSeparator());
 
         } catch (IOException e) {
             System.err.println("[ERROR] Failed to save result: " + e.getMessage());

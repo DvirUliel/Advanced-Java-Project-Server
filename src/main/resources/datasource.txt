@@ -1,0 +1,63 @@
+--------------------------------------------------------
+Profit Analyzer - Calculates profit in stock trading
+--------------------------------------------------------
+Request ID: c938b77a-3ee4-4d81-9e52-db3966d84f23
+Analysis Type: MAX_PROFIT
+Data Mode: CLOSING_PRICES
+Values Used for Analysis: [10.0, 20.0, 60.0]
+Result: StartIndex: 0, EndIndex: 2, Total: 90.0
+--------------------------------------------------------
+Request ID: a1a285be-f79c-4f32-b2c9-023efc8d4cc3
+Analysis Type: MAX_LOSS
+Data Mode: CLOSING_PRICES
+Values Used for Analysis: [-60.0, -20.0, -10.0]
+Result: StartIndex: 0, EndIndex: 2, Total: -90.0
+--------------------------------------------------------
+Request ID: c270dd40-3113-4a6d-a4ff-3711df44a23c
+Analysis Type: MAX_LOSS
+Data Mode: CLOSING_PRICES
+Values Used for Analysis: [-60.0, -20.0, -10.0]
+Result: StartIndex: 0, EndIndex: 2, Total: -90.0
+--------------------------------------------------------
+Request ID: 1cabe2da-82b9-4bbf-b20b-ca70017ae211
+Analysis Type: MAX_PROFIT
+Data Mode: CLOSING_PRICES
+Values Used for Analysis: [10.0, 20.0, 60.0]
+Result: StartIndex: 0, EndIndex: 2, Total: 90.0
+--------------------------------------------------------
+Request ID: e26c6a13-313c-4415-8c2e-1a2c319dcb81
+Analysis Type: ZERO_RETURN
+Data Mode: CLOSING_PRICES
+Values Used for Analysis: [0.0, -4.0, 8.0, 3.0, 1.0, -5.0]
+Result: StartIndex: 0, EndIndex: 0, Total: 0.0
+--------------------------------------------------------
+Request ID: d9b4ed6c-e676-4bb9-86a7-5d4686f04b8b
+Analysis Type: ZERO_RETURN
+Data Mode: CLOSING_PRICES
+Values Used for Analysis: [0.0, 0.0, 7.0, 1.0, -5.0]
+Result: StartIndex: 0, EndIndex: 1, Total: 0.0
+--------------------------------------------------------
+Request ID: ad652867-786c-4c4c-9fec-d9703e3511b2
+Analysis Type: ZERO_RETURN
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [0.0, 0.0, -4.0, 4.0, 5.0, 6.0, 7.0]
+Result: StartIndex: 0, EndIndex: 3, Total: 0.0
+--------------------------------------------------------
+Request ID: 69fe70fa-278f-4b87-8ab1-9eb766808dc6
+Analysis Type: MAX_LOSS
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [6.0, -4.0, -5.0, -6.0, 7.0, 3.0]
+Result: StartIndex: 1, EndIndex: 3, Total: -15.0
+--------------------------------------------------------
+Request ID: 80d0b224-a80b-495f-b0b4-3eabc21a7793
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [10.0, 20.0, 30.0, -40.2]
+Result: StartIndex: 0, EndIndex: 2, Total: 60.0
+--------------------------------------------------------
+Request ID: ce67cece-3f54-4d7c-9c88-5acc9d4ef016
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [-40.0, -59.0, 100.0, 52.0, 160.0, -30.0, -43.0]
+Result: StartIndex: 2, EndIndex: 4, Total: 312.0
+--------------------------------------------------------
