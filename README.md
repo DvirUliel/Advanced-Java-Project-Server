@@ -1,4 +1,4 @@
-# Profit Analyzer - Advanced Java Development Project
+# Profit Analyzer - Advanced Java Project Server
 
 A comprehensive client-server application for financial subarray analysis using advanced algorithms and enterprise design patterns.
 
