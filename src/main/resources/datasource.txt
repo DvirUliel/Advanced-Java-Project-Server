@@ -61,3 +61,21 @@ Data Mode: DAILY_CHANGES
 Values Used for Analysis: [-40.0, -59.0, 100.0, 52.0, 160.0, -30.0, -43.0]
 Result: StartIndex: 2, EndIndex: 4, Total: 312.0
 --------------------------------------------------------
+Request ID: 4588cae1-1107-48a8-b3bf-dbe17b224d61
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [1.0, 2.0, 3.4]
+Result: StartIndex: 0, EndIndex: 2, Total: 6.4
+------------------------------------------------------ --
+Request ID: 5768147b-2aea-4b3c-94a9-7741984ffe16
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [2.5, -1.0, 3.0, -2.0, 1.5, -0.5, 2.0]
+Result: StartIndex: 0, EndIndex: 6, Total: 5.5
+------------------------------------------------------ --
+Request ID: bdf5740f-0f35-41dd-9a8f-4eac864af791
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [2.5, -1.0, 3.0, -2.0, 1.5, -0.5, 2.0]
+Result: StartIndex: 0, EndIndex: 6, Total: 5.5
+------------------------------------------------------ --

@@ -1,5 +1,12 @@
 # Profit Analyzer - Advanced Java Project Server
 
+[![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)
+[![TCP Server](https://img.shields.io/badge/TCP-Server-blue.svg)](https://docs.oracle.com/javase/tutorial/networking/sockets/)
+[![Architecture](https://img.shields.io/badge/Architecture-3--Tier-green.svg)](https://en.wikipedia.org/wiki/Multitier_architecture)
+[![Protocol](https://img.shields.io/badge/Protocol-TCP%2FJSON-lightblue.svg)](https://www.json.org/)
+[![Testing](https://img.shields.io/badge/Tests-29%2F29-brightgreen.svg)](https://junit.org/junit4/)
+[![Design Patterns](https://img.shields.io/badge/Patterns-Strategy%2FMVC%2FFactory-purple.svg)](https://en.wikipedia.org/wiki/Software_design_pattern)
+
 A comprehensive client-server application for financial subarray analysis using advanced algorithms and enterprise design patterns.
 
 ## 📋 Table of Contents
