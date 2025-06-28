@@ -1,6 +1,17 @@
-# Profit Analyzer - Advanced Java Development Project
+# Profit Analyzer - Advanced Java Project Server
 
 A comprehensive client-server application for financial subarray analysis using advanced algorithms and enterprise design patterns.
+
+## 📋 Table of Contents
+
+- [Project Overview](#project-overview)
+- [Architecture](#architecture)
+- [Quick Start](#quick-start)
+- [API Usage](#api-usage)
+- [Testing](#testing)
+- [Design Patterns](#design-patterns)
+- [Performance](#performance--complexity)
+- [Project Requirements](#project-requirements-fulfilled)
 
 ## 🎯 Project Overview
 
@@ -75,20 +86,24 @@ TCP Request → HandleRequest → AnalysisController → AnalysisService → Alg
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Java 17+**
+- **Java 17+** 
 - **IntelliJ IDEA**
 - **Ports 34567 & 34568** available
 
-### Setup (3 Steps)
+### Setup (4 Steps)
 ```bash
-1. Clone repository: git clone <your-repo-url>
+1. Clone repository: git clone https://github.com/DvirUliel/Advanced-Java-Project-Server.git
 2. Open project in IntelliJ IDEA (File → Open)
-3. JARs are already included! Verify setup: Right-click test/ → Run All Tests
+3. Add JAR dependencies: F4 → Dependencies → + → JARs → Select lib/*.jar files
+4. Verify setup: Right-click src/main/test/ → Run All Tests
 ```
 
 **Expected: 29/29 tests passed** ✅
 
-**Note**: All dependencies (AlgorithmModule.jar, gson-2.8.6.jar) are included in the `lib/` folder - no manual downloads needed!
+**JAR Setup Note**: If IntelliJ doesn't automatically recognize the JARs in `lib/` folder, manually add them:
+- **Go to**: File → Project Structure → Modules → Dependencies
+- **Add**: lib/AlgorithmModule.jar and lib/gson-2.10.1.jar
+- **Scope**: Compile
 
 ### Verify Installation
 ```bash
@@ -180,9 +195,9 @@ Right-click src/main/test/ folder → Run 'All Tests'
 ### 1. Strategy Pattern
 ```java
 // Algorithm selection based on analysis type
-ISubarrayAnalyzer analyzer = (type == ZERO_RETURN)
-                ? new PrefixSumAnalyzer(0)
-                : new KadaneAnalyzer();
+ISubarrayAnalyzer analyzer = (type == ZERO_RETURN) 
+    ? new PrefixSumAnalyzer(0) 
+    : new KadaneAnalyzer();
 ```
 
 ### 2. Factory Pattern
