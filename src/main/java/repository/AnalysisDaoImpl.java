@@ -53,7 +53,7 @@ public class AnalysisDaoImpl implements IAnalysisDao {
             // Write processed values and analysis result
             writer.write("Values Used for Analysis: " + request.getValues() + System.lineSeparator());
             writer.write("Result: " + result + System.lineSeparator());
-            writer.write("--------------------------------------------------------" + System.lineSeparator());
+            writer.write("------------------------------------------------------ --" + System.lineSeparator());
 
         } catch (IOException e) {
             System.err.println("[ERROR] Failed to save result: " + e.getMessage());
