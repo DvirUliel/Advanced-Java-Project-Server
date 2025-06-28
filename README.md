@@ -92,7 +92,7 @@ TCP Request → HandleRequest → AnalysisController → AnalysisService → Alg
 
 ### Setup (4 Steps)
 ```bash
-1. Clone repository: git clone https://github.com/DvirUliel/Java-Advanced-Project
+1. Clone repository: git clone https://github.com/DvirUliel/Advanced-Java-Project-Server.git
 2. Open project in IntelliJ IDEA (File → Open)
 3. Add JAR dependencies: F4 → Dependencies → + → JARs → Select lib/*.jar files
 4. Verify setup: Right-click src/main/test/ → Run All Tests
