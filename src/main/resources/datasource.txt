@@ -79,3 +79,9 @@ Data Mode: DAILY_CHANGES
 Values Used for Analysis: [2.5, -1.0, 3.0, -2.0, 1.5, -0.5, 2.0]
 Result: StartIndex: 0, EndIndex: 6, Total: 5.5
 ------------------------------------------------------ --
+Request ID: f14bd8c9-bc82-4d0d-9f28-289b89975d44
+Analysis Type: MAX_PROFIT
+Data Mode: DAILY_CHANGES
+Values Used for Analysis: [2.5, -1.0, 3.0, -2.0, 1.5, -0.5, 2.0]
+Result: StartIndex: 0, EndIndex: 6, Total: 5.5
+------------------------------------------------------ --

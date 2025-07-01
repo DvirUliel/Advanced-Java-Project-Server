@@ -11,7 +11,6 @@ import java.net.Socket;
 /**
  * Handles individual client requests in separate threads.
  * Each instance processes one client connection from start to finish.
- * FIXED VERSION - Robust JSON reading
  */
 public class HandleRequest implements Runnable {
 
@@ -32,7 +31,7 @@ public class HandleRequest implements Runnable {
                 PrintWriter writer = new PrintWriter(socket.getOutputStream(), true)
         ) {
 
-            // Step 1: Read JSON request from client - IMPROVED VERSION
+            // Step 1: Read JSON request from client
             String jsonRequest = readCompleteJson(reader);
             System.out.println("Received request: " + jsonRequest);
 
